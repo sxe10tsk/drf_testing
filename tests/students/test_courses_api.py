@@ -107,3 +107,5 @@ def test_course_delete(client, course_factory):
     response = client.delete(url)
 
     assert response.status_code == 204
+
+
