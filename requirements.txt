@@ -5,3 +5,4 @@ psycopg2-binary
 dotenv
 pytest>=7.0
 pytest-django>=4.0
+model_bakery
