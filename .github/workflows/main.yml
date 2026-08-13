@@ -28,7 +28,7 @@ jobs:
           POSTGRES_PASSWORD: ${{ env.DB_PASSWORD }}
         ports:
           - 5432:5432
-        options:
+        options: >-
           --health-cmd pg.isready
           --health-interval 5s
           --health-timeout 5s
@@ -41,7 +41,7 @@ jobs:
       - name: Установка Питона
         uses: actions/setup-python@v4
         with:
-          python-version: 3.1
+          python-version: 3.12
 
       - name: Установка зависимостей
         run: pip install -r requirements.txt
@@ -57,7 +57,7 @@ jobs:
           DB_USER: ${{ env.DB_USER }}
           DB_PASSWORD: ${{ env.DB_PASSWORD }}
           DB_HOST: ${{ env.DB_HOST }}
-          DB_PORT: ${{ env.gitDB_PORT }}
+          DB_PORT: ${{ env.DB_PORT }}
 
 
 
